@@ -54,7 +54,7 @@ export default function NavBar() {
   );
 
   return (
-    <Box sx={{ display: "flex", marginBottom: "64px" }}>
+    <Box sx={{ display: "flex", marginBottom: "96px" }}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -79,7 +79,7 @@ export default function NavBar() {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item, index) => (
-              <Link key={item} href={["./", "./events", "./about"][index]}>
+              <Link key={item} href={["/", "/events", "/about"][index]}>
                 {item === "About" ? (
                   <IconButton>
                     <InfoIcon
