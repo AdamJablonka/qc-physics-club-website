@@ -29,7 +29,7 @@ const eventsData: Event[] = [
     description: 'Description for event 3.',
   },
   {
-    title: 'Event 3',
+    title: 'Event 4',
     location: 'SB 330',
     date: new Date('September 19, 2023'),
     description: 'Description for event 3.',
