@@ -35,14 +35,18 @@ export default function NavBar() {
         Logo
       </Typography>
       <Divider />
-      <List>
+      <List sx={{ width: "100%" }}>
         {navItems.map((item, index) => (
-          <ListItem key={item} disablePadding>
-            <Link href={["./", "./events", "./about"][index]}>
-              <ListItemButton sx={{ textAlign: "center" }}>
+          <ListItem
+            key={item}
+            disablePadding
+            sx={{ alignItems: "center", width: "100%" }}
+          >
+            <ListItemButton sx={{ textAlign: "center", width: "100%" }}>
+              <Link href={["./", "./events", "./about"][index]}>
                 <ListItemText primary={item} />
-              </ListItemButton>
-            </Link>
+              </Link>
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
