@@ -26,9 +26,17 @@ body {
     )
     rgb(var(--background-start-rgb));
   }
-  
-  .center-photo {
-    width: 1920px;
-    height: 1080px;
-    position: relative;
+
+  .container {
+    display: flex;
+    justify-content: center; /* aligns items horizontally */
+    width: 500px;
+    height: 350px;           /* 100% of the viewport height */
+}
+
+  .container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; 
+    height: auto;
 }
