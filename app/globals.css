@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -19,9 +20,15 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  }
+  
+  .center-photo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
 }
