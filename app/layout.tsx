@@ -17,7 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const preferedMode = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <html lang="en">
       <body className={inter.className}>
