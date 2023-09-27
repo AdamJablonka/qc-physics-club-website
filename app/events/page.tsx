@@ -34,7 +34,7 @@ export const eventsData: Event[] = [
     title: 'Event 4',
     location: 'SB 330',
     date: new Date('September 19, 2023'),
-    description: 'Description for event 3.',
+    description: 'Description for event 4.',
   }
 
   // ... add more events as needed
@@ -60,7 +60,7 @@ export default function Events() {
       <Grid container spacing={3} marginBottom="20px">
         {upcomingEvents.map((event: Event, index: number) => (
           <Grid item xs={12} md={6} key={index}>
-            <Link href={'/events/${createSlug(event.title)}'} passHref>
+            <Link href={`/events/${createSlug(event.title)}`} passHref>
             <Card>
                 <CardContent>
                   <Typography variant="h6">{event.title}</Typography>
@@ -79,6 +79,7 @@ export default function Events() {
       <Grid container spacing={3}>
         {eventsData.map((event: Event, index: number) => (
           <Grid item xs={12} md={6} key={index}>
+            <Link href={`/events/${createSlug(event.title)}`} passHref>
             <Card>
               <CardContent>
                 <Typography variant="h6">{event.title}</Typography>
@@ -87,6 +88,7 @@ export default function Events() {
                 <Typography paragraph>{event.description}</Typography>
               </CardContent>
             </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
