@@ -36,7 +36,7 @@ export default function Home() {
           <Typography>Welcome to the physics club.</Typography>
         </Grid>
         <Box>
-          <ImageCarousel images={imageData} />
+          <ImageCarousel images={imageData} width={'90vw'}/>
         </Box>
       </Grid>
     </main>
