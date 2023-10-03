@@ -1,5 +1,6 @@
 import { Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -61,28 +62,36 @@ export default function About() {
     <Grid container spacing={4}>
         <Grid item xs={6}> 
           <Container className="text-center flex justify-center items-center flex-col">
-            <Image src="/images/carlos.jpeg" alt="Carlos Vega" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            <Link href="https://www.linkedin.com/in/carlos-vega-13705b195/" target="_blank" passHref>
+              <Image src="/images/carlos.jpeg" alt="Carlos Vega" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            </Link>
             <Typography variant="body1" className="text-xl font-semibold text-center">Carlos Vega</Typography>
             <Typography variant = "body1" className="text-md">Lead Developer</Typography>
           </Container>
         </Grid>
         <Grid item xs={6}> 
           <Container className="text-center flex justify-center items-center flex-col">
-            <Image src="/images/adam.png" alt="Adam Jablonka" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            <Link href="https://www.linkedin.com/in/adam-jablonka/" target="_blank" passHref>
+              <Image src="/images/adam.png" alt="Adam Jablonka" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            </Link>
             <Typography variant="body1" className="text-xl font-semibold text-center">Adam Jablonka</Typography>
             <Typography variant = "body1" className="text-md">Lead Developer</Typography>
           </Container>
         </Grid>
         <Grid item xs={6}>
           <Container className="text-center flex justify-center items-center flex-col">
-            <Image src="/images/jeremy.png" alt="Jeremy Gangaram" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            <Link href="https://www.linkedin.com/in/jeremy-gangaram-89671222a/" target="_blank" passHref>
+              <Image src="/images/jeremy.png" alt="Jeremy Gangaram" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            </Link>
             <Typography variant="body1" className="text-xl font-semibold text-center">Jeremy Gangaram</Typography>
             <Typography variant = "body1" className="text-md">Lead Developer</Typography>
           </Container>
         </Grid>
         <Grid item xs={6}>
           <Container className="text-center flex justify-center items-center flex-col">
-            <Image src="/images/masroor.png" alt="Masroor" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            <Link href="https://www.linkedin.com/in/masroor-k/" target="_blank" passHref>
+              <Image src="/images/masroor.png" alt="Jeremy Gangaram" width={200} height={200} className="rounded shadow-lg mb-4"/>
+            </Link>
             <Typography variant="body1" className="text-xl font-semibold text-center">Masroor</Typography>
             <Typography variant = "body1" className="text-md">Amoung Us</Typography>
           </Container>
