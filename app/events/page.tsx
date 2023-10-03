@@ -152,7 +152,6 @@ export default function Events() {
               xs={12}
               md={6}
               key={index}
-              sx={{ cursor: "pointer" }}
               onClick={() =>
                 (window.location.href = `/events/${createSlug(event.title)}`)
               }
