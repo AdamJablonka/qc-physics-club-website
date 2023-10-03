@@ -28,9 +28,10 @@ interface ImageData {
 
 interface ImageCarouselProps {
   images: ImageData[];
+  width: string;
 }
 
-export const ImageCarousel = ({ images }: ImageCarouselProps) => {
+export const ImageCarousel = ({ images, width}: ImageCarouselProps) => {
   const theme = useTheme();
 
   return (
@@ -38,7 +39,7 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
       <Swiper
         style={
           {
-            width: "90vw",
+            width: `${width}`,
             paddingBottom: "2rem",
           } as React.CSSProperties
         }
