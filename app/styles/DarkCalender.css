@@ -1,0 +1,21 @@
+.react-calendar {
+    background: #424242;  /* Adjust these colors as needed */
+    color: #e0e0e0;
+    border: 1px solid #616161;
+  }
+  
+  .react-calendar__tile--active {
+    background: #536dfe;  /* Color for the selected date */
+    color: #ffffff;
+  }
+  
+  .react-calendar__navigation button,
+  .react-calendar__month-view__days__day--weekend {
+    color: #bbdefb;  /* Color for navigation buttons and weekends */
+  }
+  
+  .react-calendar__tile--now {
+    background: #1e88e5;  /* Color for today's date */
+    color: #ffffff;
+  }
+  
