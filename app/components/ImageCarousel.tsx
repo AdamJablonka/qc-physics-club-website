@@ -29,9 +29,10 @@ interface ImageData {
 interface ImageCarouselProps {
   images: ImageData[];
   width: string;
+  height?: string;
 }
 
-export const ImageCarousel = ({ images, width}: ImageCarouselProps) => {
+export const ImageCarousel = ({ images, width }: ImageCarouselProps) => {
   const theme = useTheme();
 
   return (
@@ -40,6 +41,7 @@ export const ImageCarousel = ({ images, width}: ImageCarouselProps) => {
         style={
           {
             width: `${width}`,
+            height: "100%",
             paddingBottom: "2rem",
           } as React.CSSProperties
         }
