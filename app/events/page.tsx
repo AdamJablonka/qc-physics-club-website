@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import React from "react";
 import { ExpandableCard } from "../components/ExpandableCard";
-import { eventsData, imageData, ClubEvent } from "./utils";
+import { eventsData, stockImageData, ClubEvent } from "./utils";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -61,7 +61,7 @@ export default function Events() {
         </Typography>
       </Box>
       <Box margin={6}>
-        <ImageCarousel images={imageData} width={"72vw"} />
+        <ImageCarousel images={stockImageData} width={"70vw"} />
         <Typography variant="h4" gutterBottom>
           Upcoming Events
         </Typography>
@@ -71,7 +71,7 @@ export default function Events() {
               item
               xs={12}
               md={6}
-              key={index}
+              key={event.id}
               onClick={() =>
                 (window.location.href = `/events/${createSlug(
                   event.id.toString()
@@ -96,7 +96,7 @@ export default function Events() {
               item
               xs={12}
               md={6}
-              key={index}
+              key={event.id}
               onClick={() =>
                 (window.location.href = `/events/${createSlug(
                   event.id.toString()

@@ -51,7 +51,9 @@ export const ExpandableCard = ({
 
   return (
     <Card>
-      <CardContent sx={{ height: "13rem", padding: "10px", cursor: "pointer" }}>
+      <CardContent
+        sx={{ height: "11.5rem", padding: "10px", cursor: "pointer" }}
+      >
         <Typography variant="h6">{title}</Typography>
         <Typography color="textSecondary">{location}</Typography>
         <Typography color="textSecondary">{date.toDateString()}</Typography>
@@ -64,7 +66,7 @@ export const ExpandableCard = ({
             transition: "top 0.3s ease, opacity 0.3s ease",
           }}
         >
-          {description.slice(0, 125)}...
+          {description.slice(0, 25)}...
         </Typography>
         <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
           <Grid item>

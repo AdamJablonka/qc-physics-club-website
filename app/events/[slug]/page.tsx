@@ -1,56 +1,100 @@
-"use client";
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  ImageList,
+  ImageListItem,
+  Typography,
+} from "@mui/material";
 import { eventsData } from "../utils";
 import React from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { styled } from "@mui/material/styles";
+import { DarkCalenderWrapper } from "./DarkCalenderWrapper";
+import { stockImageData } from "../utils";
+import Image from "next/image";
 
-const DarkStyledCalendar = styled(Calendar)(({ theme }) => ({
-  ...(theme.palette.mode === "dark" && {
-    background: "#424242 !important",
-    color: "#e0e0e0 !important",
-    "& .react-calendar__tile--active": {
-      background: "#536dfe !important",
-      color: "#ffffff !important",
-    },
-    "& .react-calendar__navigation button, & .react-calendar__month-view__days__day--weekend":
-      {
-        color: "#bbdefb !important",
-      },
-    "& .react-calendar__tile--now": {
-      background: "#1e88e5 !important",
-      color: "#ffffff !important",
-    },
-  }),
-}));
-
-export default function productPage({ params }: { params: { slug: string } }) {
-  const event = eventsData[Number(params.slug)];
+export default function ProductPage({ params }: { params: { slug: string } }) {
+  console.log("test page id:", params.slug);
+  let event = eventsData[Number(params.slug)];
+  const eventDate = event.date;
 
   return (
-    <Container>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        marginTop="2rem"
-        marginBottom="2rem"
+    <div>
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "23rem",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <Typography variant="h2" align="center" gutterBottom>
-          {event.title}
-        </Typography>
-        <Typography variant="h6" align="center">
-          {event.description}
-        </Typography>
-        <DarkStyledCalendar
-          navigationLabel={() => null}
-          value={event.date}
-          next2Label={null}
-          prev2Label={null}
+        <Image
+          src="/images/1d50e6c9cf491d88c7c47c5db53c89f5.png"
+          alt="My Image"
+          layout="fill"
+          objectFit="cover"
+          style={{ position: "absolute", zIndex: -1, opacity: 0.3 }}
         />
-      </Box>
-    </Container>
+
+        <Grid
+          container
+          sx={{
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "2rem",
+            zIndex: 2,
+            top: "2rem",
+          }}
+          gap={4}
+        >
+          <Grid item>
+            <Typography color="textSecondary">
+              Event date: {eventDate.toDateString()}
+            </Typography>
+            <Typography color="textSecondary">
+              Location: {event.location}
+            </Typography>
+          </Grid>
+          <Grid item>
+            <DarkCalenderWrapper eventDate={eventDate} />
+          </Grid>
+        </Grid>
+      </div>
+      <Container>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          marginTop="2rem"
+          marginBottom="2rem"
+        >
+          <Typography variant="h2" align="center" gutterBottom>
+            {event.title}
+          </Typography>
+          <Typography variant="h6" align="center">
+            {event.description}
+          </Typography>
+          <ImageList
+            sx={{ width: "100%", height: "100%", margin: "5rem" }}
+            variant="woven"
+            cols={3}
+            gap={20}
+          >
+            {stockImageData.map((item) => (
+              <ImageListItem key={item.src}>
+                <Image
+                  src={`${item.src}`}
+                  alt={item.alt}
+                  width={400}
+                  height={400}
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+      </Container>
+    </div>
   );
 }
