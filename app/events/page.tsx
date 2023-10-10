@@ -1,97 +1,118 @@
 // pages/events.js
+"use client";
+import { ImageCarousel } from "../components/ImageCarousel";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  IconButton,
+  IconButtonProps,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { styled } from "@mui/material/styles";
+import React from "react";
+import { ExpandableCard } from "../components/ExpandableCard";
+import { eventsData, stockImageData, ClubEvent } from "./utils";
 
-import Link from 'next/link';
-import { Container, Typography, Card, CardContent, Grid } from '@mui/material';
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean;
+}
 
-type Event = {
-  title: string;
-  date: Date;
-  description: string;
-  location: string;
-};
-
-export const eventsData: Event[] = [
-  {
-    title: 'Event 1',
-    location: 'SB 330',
-    date: new Date('September 20, 2023'),
-    description: 'Description for event 1.',
-
-  },
-  {
-    title: 'Event 2',
-    location: 'SB 330',
-    date: new Date('October 4, 2023'),
-    description: 'Description for event 2.',
-  },
-  {
-    title: 'Event 3',
-    location: 'SB 330',
-    date: new Date('November 4, 2023'),
-    description: 'Description for event 3.',
-  },
-  {
-    title: 'Event 4',
-    location: 'SB 330',
-    date: new Date('September 19, 2023'),
-    description: 'Description for event 4.',
-  }
-
-  // ... add more events as needed
-];
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 eventsData.sort((a, b) => a.date.getTime() - b.date.getTime());
 
 const currentDate = new Date();
-const upcomingEvents = eventsData.filter(event => event.date > currentDate);
+const upcomingEvents = eventsData.filter((event) => event.date > currentDate);
 upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
 
-function createSlug(title: string): string {
-  console.log(title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''))
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+function createSlug(id: string): string {
+  return id;
 }
 
 export default function Events() {
+  eventsData.map((event) => console.log("test events page events id:", event));
+
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>
-        Upcoming Events
-      </Typography>
-      <Grid container spacing={3} marginBottom="20px">
-        {upcomingEvents.map((event: Event, index: number) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Link href={`/events/${createSlug(event.title)}`} passHref>
-            <Card>
-                <CardContent>
-                  <Typography variant="h6">{event.title}</Typography>
-                  <Typography color="textSecondary">{event.location}</Typography>
-                  <Typography color="textSecondary">{event.date.toDateString()}</Typography>
-                  <Typography paragraph>{event.description}</Typography>
-                </CardContent>
-              </Card>
-            </Link>
-          </Grid>
-        ))}
-      </Grid>
-      <Typography variant="h4" gutterBottom>
-        All Events
-      </Typography>
-      <Grid container spacing={3}>
-        {eventsData.map((event: Event, index: number) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Link href={`/events/${createSlug(event.title)}`} passHref>
-            <Card>
-              <CardContent>
-                <Typography variant="h6">{event.title}</Typography>
-                <Typography color="textSecondary">{event.location}</Typography>
-                <Typography color="textSecondary">{event.date.toDateString()}</Typography>
-                <Typography paragraph>{event.description}</Typography>
-              </CardContent>
-            </Card>
-            </Link>
-          </Grid>
-        ))}
-      </Grid>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        marginTop="2rem"
+        marginBottom="2rem"
+      >
+        <Typography variant="h2" align="center" gutterBottom>
+          SPS Events
+        </Typography>
+        <Typography variant="h6" align="center">
+          All curious minds are welcome to attend our events!
+        </Typography>
+      </Box>
+      <Box margin={6}>
+        <ImageCarousel images={stockImageData} width={"70vw"} />
+        <Typography variant="h4" gutterBottom>
+          Upcoming Events
+        </Typography>
+        <Grid container spacing={3} marginBottom="20px">
+          {upcomingEvents.map((event: ClubEvent, index: number) => (
+            <Grid
+              item
+              xs={12}
+              md={6}
+              key={event.id}
+              onClick={() =>
+                (window.location.href = `/events/${createSlug(
+                  event.id.toString()
+                )}`)
+              }
+            >
+              <ExpandableCard
+                date={event.date}
+                title={event.title}
+                location={event.location}
+                description={event.description}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <Typography variant="h4" gutterBottom>
+          All Events
+        </Typography>
+        <Grid container spacing={3}>
+          {eventsData.map((event: ClubEvent, index: number) => (
+            <Grid
+              item
+              xs={12}
+              md={6}
+              key={event.id}
+              onClick={() =>
+                (window.location.href = `/events/${createSlug(
+                  event.id.toString()
+                )}`)
+              }
+            >
+              <ExpandableCard
+                date={event.date}
+                title={event.title}
+                location={event.location}
+                description={event.description}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }
