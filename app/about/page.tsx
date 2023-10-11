@@ -1,5 +1,4 @@
 "use client";
-
 import { Container, Typography, Card, CardContent, Grid } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
