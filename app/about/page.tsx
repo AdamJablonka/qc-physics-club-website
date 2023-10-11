@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Meet our team.",
+};
+
 
 export default function About() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Box,
   Container,
@@ -13,8 +14,14 @@ import { DarkCalenderWrapper } from "./DarkCalenderWrapper";
 import { stockImageData } from "../utils";
 import Image from "next/image";
 
+
+export const metadata: Metadata = {
+  title: "Club Event",
+  description: "Below is a club event.",
+};
+
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
-  console.log("test page id:", params.slug);
   let event = eventsData[Number(params.slug)];
   const eventDate = event.date;
 
