@@ -6,7 +6,7 @@ export const theme = createTheme({
     mode: "dark",
     background: {
       default: "#000029",
-      paper: "#242526",
+      paper: "#00002D",
     },
   },
 });
