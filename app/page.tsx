@@ -1,5 +1,9 @@
+"use client";
+
 import { Box, Grid, Typography } from "@mui/material";
 import { ImageCarousel } from "./components/ImageCarousel";
+import Image from "next/image";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Home() {
   const imageData = [
@@ -25,18 +29,25 @@ export default function Home() {
       height: 720,
     },
   ];
+  const isMobile = useMediaQuery("(max-width:600px)"); // Define your mobile breakpoint
+
+  // Define different width and height values for mobile and web
+  const imageWidth = isMobile ? 800 : 1300;
+  const imageHeight = isMobile ? 600 : 900;
+  const imageMargin = isMobile ? "2rem" : "6rem";
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center ">
+      <Image
+        src="/images/qcpc-logo.png"
+        alt="qcpc logo"
+        width={imageWidth}
+        height={imageHeight}
+        style={{ marginBottom: imageMargin }}
+      />
       <Grid container direction="column" sx={{ alignContent: "center" }}>
-        <Grid item>
-          <Typography variant="h3">Hello!</Typography>
-        </Grid>
-        <Grid item>
-          <Typography>Welcome to the physics club.</Typography>
-        </Grid>
         <Box>
-          <ImageCarousel images={imageData} width={'90vw'}/>
+          <ImageCarousel images={imageData} width={"90vw"} />
         </Box>
       </Grid>
     </main>
