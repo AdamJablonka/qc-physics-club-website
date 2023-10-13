@@ -77,13 +77,21 @@ export const ImageCarousel = ({ images, width }: ImageCarouselProps) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width || 1280}
-              height={image.height || 720}
-              layout="responsive"
-            />
+            <div
+              style={{
+                width: "100%",
+                paddingTop: "56.25%",
+                position: "relative",
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,3 +1,5 @@
+import { PrefetchOptions } from "next/dist/shared/lib/router/router";
+
 export const imageData = [
   {
     src: "/images/IMG_3167.jpg",
@@ -32,7 +34,7 @@ export type eventPhoto = {
   }[];
 };
 
-type PhotosArray = {
+export type PhotosArray = {
   src: string;
   alt: string;
   legend: string;
@@ -57,6 +59,79 @@ export const eventFillerPhotos: PhotosArray = [
   },
   {
     src: "/images/event_filler_2.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/IMG_3675.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+];
+
+export const firstAstronomyNightPhotos: PhotosArray = [
+  {
+    src: "/images/astronomy_night_1_1.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_2.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_3.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_4.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_5.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_6.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_7.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/astronomy_night_1_8.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/IMG_3675.jpg",
     alt: "Club event photo",
     legend: "Club event photo",
     width: 1280,

@@ -32,22 +32,22 @@ export default function NavBar() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Logo
+        QC Physics Club
       </Typography>
       <Divider />
       <List sx={{ width: "100%" }}>
         {navItems.map((item, index) => (
-          <ListItem
-            key={item}
-            disablePadding
-            sx={{ alignItems: "center", width: "100%" }}
-          >
-            <ListItemButton sx={{ textAlign: "center", width: "100%" }}>
-              <Link href={["./", "./events", "./about"][index]}>
+          <Link key={item} href={["./", "./events", "./about"][index]}>
+            <ListItem
+              key={item}
+              disablePadding
+              sx={{ alignItems: "start", width: "100%" }}
+            >
+              <ListItemButton sx={{ textAlign: "start", width: "100%" }}>
                 <ListItemText primary={item} />
-              </Link>
-            </ListItemButton>
-          </ListItem>
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -73,6 +73,20 @@ export default function NavBar() {
             sx={{
               flexGrow: 1,
               display: { xs: "none", sm: "block", fontWeight: "bold" },
+            }}
+          >
+            <Link href={"./"}>QC SPS</Link>
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: {
+                xs: "block",
+                sm: "none",
+                fontWeight: "bold",
+              },
             }}
           >
             <Link href={"./"}>QC SPS</Link>
