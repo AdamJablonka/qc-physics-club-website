@@ -22,6 +22,48 @@ export const imageData = [
   },
 ];
 
+export type eventPhoto = {
+  eventPhoto: {
+    src: string;
+    alt: string;
+    legend: string;
+    width: number;
+    height: number;
+  }[];
+};
+
+type PhotosArray = {
+  src: string;
+  alt: string;
+  legend: string;
+  width: number;
+  height: number;
+}[];
+
+export const eventFillerPhotos: PhotosArray = [
+  {
+    src: "/images/event_filler_3.png",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/event_filler_1.png",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/event_filler_2.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+];
+
 export const stockImageData = [
   {
     src: "/images/1000_F_291812089_cwyYm4eRFVGdMi32EjSz1y5QUwXS6fhY.jpg",
