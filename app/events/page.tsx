@@ -15,6 +15,7 @@ import { styled } from "@mui/material/styles";
 import React from "react";
 import { ExpandableCard } from "../components/ExpandableCard";
 import { eventsData, eventFillerPhotos, ClubEvent } from "./utils";
+import { FadeOnScroll } from "../components/FadeOnScroll";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -82,12 +83,14 @@ export default function Events() {
                 )}`)
               }
             >
-              <ExpandableCard
-                date={event.date}
-                title={event.title}
-                location={event.location}
-                description={event.description}
-              />
+              <FadeOnScroll>
+                <ExpandableCard
+                  date={event.date}
+                  title={event.title}
+                  location={event.location}
+                  description={event.description}
+                />
+              </FadeOnScroll>
             </Grid>
           ))}
         </Grid>
@@ -107,12 +110,14 @@ export default function Events() {
                 )}`)
               }
             >
-              <ExpandableCard
-                date={event.date}
-                title={event.title}
-                location={event.location}
-                description={event.description}
-              />
+              <FadeOnScroll>
+                <ExpandableCard
+                  date={event.date}
+                  title={event.title}
+                  location={event.location}
+                  description={event.description}
+                />
+              </FadeOnScroll>
             </Grid>
           ))}
         </Grid>
