@@ -1,5 +1,6 @@
 // pages/events.js
 "use client";
+import type { Metadata } from "next";
 import { ImageCarousel } from "../components/ImageCarousel";
 import {
   Box,
@@ -13,7 +14,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import React from "react";
 import { ExpandableCard } from "../components/ExpandableCard";
-import { eventsData, stockImageData, ClubEvent } from "./utils";
+import { eventsData, eventFillerPhotos, ClubEvent } from "./utils";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -40,9 +41,12 @@ function createSlug(id: string): string {
   return id;
 }
 
-export default function Events() {
-  eventsData.map((event) => console.log("test events page events id:", event));
+// export const metadata: Metadata = {
+//   title: "Club Events",
+//   description: "Here are some of our upcoming club events.",
+// };
 
+export default function Events() {
   return (
     <Container>
       <Box
@@ -61,7 +65,7 @@ export default function Events() {
         </Typography>
       </Box>
       <Box margin={6}>
-        <ImageCarousel images={stockImageData} width={"70vw"} />
+        <ImageCarousel images={eventFillerPhotos} width={"70vw"} />
         <Typography variant="h4" gutterBottom>
           Upcoming Events
         </Typography>

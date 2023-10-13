@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Box,
   Container,
@@ -10,11 +11,15 @@ import { eventsData } from "../utils";
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import { DarkCalenderWrapper } from "./DarkCalenderWrapper";
-import { stockImageData } from "../utils";
+import { eventFillerPhotos } from "../utils";
 import Image from "next/image";
 
+export const metadata: Metadata = {
+  title: "Club Event",
+  description: "Below is a club event.",
+};
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
-  console.log("test page id:", params.slug);
   let event = eventsData[Number(params.slug)];
   const eventDate = event.date;
 
@@ -82,7 +87,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             cols={3}
             gap={20}
           >
-            {stockImageData.map((item) => (
+            {eventFillerPhotos.map((item) => (
               <ImageListItem key={item.src}>
                 <Image
                   src={`${item.src}`}
