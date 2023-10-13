@@ -68,7 +68,12 @@ export const ExpandableCard = ({
         >
           {description.slice(0, 25)}...
         </Typography>
-        <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
+        <Grid
+          container
+          sx={{
+            alignItems: "center",
+          }}
+        >
           <Grid item>
             <ExpandMore
               expand={expanded}

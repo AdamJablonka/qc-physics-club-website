@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import {
-  Box,
-  Container,
-  Grid,
-  ImageList,
-  ImageListItem,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { eventsData } from "../utils";
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import { DarkCalenderWrapper } from "./DarkCalenderWrapper";
-import { eventFillerPhotos } from "../utils";
 import Image from "next/image";
+import EventImageList from "../../components/EventImageList";
+import { FadeOnScroll } from "@/app/components/FadeOnScroll";
 
 export const metadata: Metadata = {
   title: "Club Event",
@@ -22,14 +16,18 @@ export const metadata: Metadata = {
 export default function ProductPage({ params }: { params: { slug: string } }) {
   let event = eventsData[Number(params.slug)];
   const eventDate = event.date;
+  const eventPhotos = event.eventPhotos;
 
   return (
     <div>
-      <div
-        style={{
+      <Box
+        sx={{
           position: "relative",
           width: "100%",
-          height: "23rem",
+          height: {
+            xs: "30rem",
+            md: "24rem",
+          },
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -54,18 +52,24 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           gap={4}
         >
           <Grid item>
-            <Typography color="textSecondary">
-              Event date: {eventDate.toDateString()}
-            </Typography>
-            <Typography color="textSecondary">
-              Location: {event.location}
-            </Typography>
+            <FadeOnScroll>
+              <Typography color="textSecondary">
+                Event date: {eventDate.toDateString()}
+              </Typography>
+            </FadeOnScroll>
+            <FadeOnScroll>
+              <Typography color="textSecondary">
+                Location: {event.location}
+              </Typography>
+            </FadeOnScroll>
           </Grid>
-          <Grid item>
-            <DarkCalenderWrapper eventDate={eventDate} />
-          </Grid>
+          <FadeOnScroll>
+            <Grid item>
+              <DarkCalenderWrapper eventDate={eventDate} />
+            </Grid>
+          </FadeOnScroll>
         </Grid>
-      </div>
+      </Box>
       <Container>
         <Box
           display="flex"
@@ -75,29 +79,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           marginTop="2rem"
           marginBottom="2rem"
         >
-          <Typography variant="h2" align="center" gutterBottom>
-            {event.title}
-          </Typography>
-          <Typography variant="h6" align="center">
-            {event.description}
-          </Typography>
-          <ImageList
-            sx={{ width: "100%", height: "100%", margin: "5rem" }}
-            variant="woven"
-            cols={3}
-            gap={20}
-          >
-            {eventFillerPhotos.map((item) => (
-              <ImageListItem key={item.src}>
-                <Image
-                  src={`${item.src}`}
-                  alt={item.alt}
-                  width={400}
-                  height={400}
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
+          <FadeOnScroll>
+            <Typography variant="h2" align="center" gutterBottom>
+              {event.title}
+            </Typography>
+          </FadeOnScroll>
+          <FadeOnScroll>
+            <Typography variant="h6" align="center">
+              {event.description}
+            </Typography>
+          </FadeOnScroll>
+          <EventImageList eventPhotos={eventPhotos} />
         </Box>
       </Container>
     </div>
