@@ -5,6 +5,7 @@ import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { eventFillerPhotos } from "./events/utils/imageData";
 import { FadeOnScroll } from "./components/FadeOnScroll";
+import { ParallaxCursorComponent } from "./components/ParallaxCursorComponent";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -24,6 +25,7 @@ export default function Home() {
             sm: "0rem",
           },
           alignItems: "center",
+          justifyContent: "center",
           marginTop: {
             md: "1rem",
             sm: "0rem",
@@ -32,7 +34,7 @@ export default function Home() {
         }}
       >
         <Grid item xs={3}>
-          <Hidden smDown>
+          <Hidden mdDown>
             <FadeOnScroll>
               <Typography
                 variant="h3"
@@ -41,6 +43,7 @@ export default function Home() {
                   fontWeight: "bold",
                   whiteSpace: "nowrap",
                   paddingLeft: "1rem",
+                  textAlign: "center",
                 }}
               >
                 Welcome to
@@ -48,7 +51,11 @@ export default function Home() {
               <Typography
                 variant="h3"
                 gutterBottom
-                sx={{ fontWeight: "bold", paddingLeft: "1rem" }}
+                sx={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  paddingLeft: "1rem",
+                }}
               >
                 Physics.
               </Typography>
@@ -95,6 +102,9 @@ export default function Home() {
           </FadeOnScroll>
         </Grid>
       </Grid>
+      <Hidden mdDown>
+        <ParallaxCursorComponent />
+      </Hidden>
       <FadeOnScroll>
         <Grid
           container

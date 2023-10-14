@@ -1,4 +1,3 @@
-// pages/events.js
 "use client";
 import type { Metadata } from "next";
 import { ImageCarousel } from "../components/ImageCarousel";
