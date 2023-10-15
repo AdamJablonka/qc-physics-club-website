@@ -32,7 +32,6 @@ interface ImageCarouselProps {
   height?: string;
 }
 
-//test
 export const ImageCarousel = ({ images, width }: ImageCarouselProps) => {
   const theme = useTheme();
 
