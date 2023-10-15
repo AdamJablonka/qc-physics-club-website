@@ -118,7 +118,7 @@ export default function Home() {
           }}
         >
           <Box>
-            <ImageCarousel images={eventFillerPhotos} width={"90vw"} />
+            <ImageCarousel images={eventFillerPhotos} width={"90em"} />
           </Box>
         </Grid>
       </FadeOnScroll>
