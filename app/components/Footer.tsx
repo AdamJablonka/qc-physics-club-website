@@ -1,35 +1,62 @@
-// src/componetns/Footer.tsx
+// src/components/Footer.tsx
+"use client";
+import React from "react";
+import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
 
-import React, { FC, ReactElement } from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+export default function Footer() {
+  const theme = useTheme();
 
-export const Footer: FC = (): ReactElement => {
   return (
     <Box
       sx={{
         width: "100%",
         height: "auto",
-        backgroundColor: "secondary.main",
+        backgroundColor: theme.palette.info.dark,
         paddingTop: "1rem",
         paddingBottom: "1rem",
       }}
     >
       <Container maxWidth="lg">
-        <Grid container direction="column" alignItems="center">
-          <Grid item xs={12}>
-            <Typography color="black" variant="h5">
-              React Starter App
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h6">About Us</Typography>
+            <Typography variant="body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Typography color="textSecondary" variant="subtitle1">
-              {`${new Date().getFullYear()} | React | Material UI | React Router`}
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h6">Contact Us</Typography>
+            <Typography variant="body2">
+              Email: contact@example.com
+              <br />
+              Phone: (123) 456-7890
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h6">Links & Info</Typography>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Products</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h6">Etc information</Typography>
+            <Typography variant="body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Grid>
         </Grid>
       </Container>
     </Box>
   );
-};
-
-export default Footer;
+}
