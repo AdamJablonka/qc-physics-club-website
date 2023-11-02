@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
 import { theme } from "./utils/theme";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <NavBar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
