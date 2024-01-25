@@ -21,15 +21,15 @@ export default function Footer() {
           <Grid item xs={12} sm={3}>
             <Typography variant="h6">About Us</Typography>
             <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Queen's College Physics Club - Officialy apart of Sigma Pi Sigma
             </Typography>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Typography variant="h6">Contact Us</Typography>
             <Typography variant="body2">
-              Email: contact@example.com
+              Email: physicsclub.qc.cuny@gmail.com
               <br />
-              Phone: (123) 456-7890
+              Phone: (718) 997-3350
             </Typography>
           </Grid>
           <Grid item xs={12} sm={3}>
@@ -39,20 +39,23 @@ export default function Footer() {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="https://www.qc.cuny.edu/academics/physics/">
+                  Department
+                </a>
               </li>
               <li>
-                <a href="#">Products</a>
+                <a href="/events">Events</a>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <a href="/about">About</a>
               </li>
             </ul>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Typography variant="h6">Etc information</Typography>
             <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Open to all students, not only physics! Feel free to drop by
+              whenever. Room: Science building B330
             </Typography>
           </Grid>
         </Grid>
