@@ -21,7 +21,7 @@ export default function Footer() {
           <Grid item xs={12} sm={3}>
             <Typography variant="h6">About Us</Typography>
             <Typography variant="body2">
-              Queen's College Physics Club - Officialy apart of Sigma Pi Sigma
+              Queens College Physics Club - Officialy apart of Sigma Pi Sigma
             </Typography>
           </Grid>
           <Grid item xs={12} sm={3}>
