@@ -18,12 +18,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center ">
       <Grid
         container
-        spacing={4}
+        spacing={2}
         sx={{
-          paddingLeft: {
-            md: "4rem",
-            sm: "0rem",
-          },
           alignItems: "center",
           justifyContent: "center",
           marginTop: {
@@ -33,7 +29,7 @@ export default function Home() {
           marginBottom: imageMargin,
         }}
       >
-        <Grid item xs={3}>
+        <Grid item xs={5}>
           <Hidden mdDown>
             <FadeOnScroll>
               <Typography
@@ -91,10 +87,10 @@ export default function Home() {
             </FadeOnScroll>
           </Hidden>
         </Grid>
-        <Grid item xs={12} md={9}>
+        <Grid item xs={12} md={4}>
           <FadeOnScroll>
             <Image
-              src="/images/qcpc-logo.png"
+              src="/images/official_logo.png"
               alt="qcpc logo"
               width={imageWidth}
               height={imageHeight}
@@ -118,7 +114,7 @@ export default function Home() {
           }}
         >
           <Box>
-            <ImageCarousel images={eventFillerPhotos} width={"90vw"} />
+            <ImageCarousel images={eventFillerPhotos} width={"80vw"} />
           </Box>
         </Grid>
       </FadeOnScroll>

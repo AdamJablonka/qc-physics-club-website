@@ -65,7 +65,7 @@ export default function Events() {
         </Typography>
       </Box>
       <Box margin={6}>
-        <ImageCarousel images={eventFillerPhotos} width={"70vw"} />
+        <ImageCarousel images={eventFillerPhotos} width={"90em"} />
         <Typography variant="h4" gutterBottom>
           Upcoming Events
         </Typography>
