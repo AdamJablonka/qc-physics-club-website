@@ -5,8 +5,11 @@ export const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#000029",
-      paper: "#00002D",
+      default: "#070e2d",
+      paper: "#6196fe",
+    },
+    text: {
+      primary: "#ffe8c7", // Primary text color
     },
   },
 });
