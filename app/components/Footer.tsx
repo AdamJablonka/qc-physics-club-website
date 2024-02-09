@@ -11,7 +11,7 @@ export default function Footer() {
       sx={{
         width: "100%",
         height: "auto",
-        backgroundColor: theme.palette.info.dark,
+        backgroundColor: theme.palette.background.paper,
         paddingTop: "1rem",
         paddingBottom: "1rem",
       }}

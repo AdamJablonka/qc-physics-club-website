@@ -1,11 +1,12 @@
 "use client";
-import { Box, Grid, Typography, Hidden, Divider } from "@mui/material";
+import { Box, Grid, Typography, Hidden, Divider, Button } from "@mui/material";
 import { ImageCarousel } from "./components/ImageCarousel";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { eventFillerPhotos } from "./events/utils/imageData";
 import { FadeOnScroll } from "./components/FadeOnScroll";
 import { ParallaxCursorComponent } from "./components/ParallaxCursorComponent";
+import { theme } from "./utils/theme";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -13,6 +14,7 @@ export default function Home() {
   const imageWidth = isMobile ? 800 : 1200;
   const imageHeight = isMobile ? 600 : 800;
   const imageMargin = isMobile ? "5rem" : "15rem";
+  const doubleGT = ">>";
 
   return (
     <main className="flex min-h-screen flex-col items-center ">
@@ -29,64 +31,6 @@ export default function Home() {
           marginBottom: imageMargin,
         }}
       >
-        <Grid item xs={5}>
-          <Hidden mdDown>
-            <FadeOnScroll>
-              <Typography
-                variant="h3"
-                gutterBottom
-                sx={{
-                  fontWeight: "bold",
-                  whiteSpace: "nowrap",
-                  paddingLeft: "1rem",
-                  textAlign: "center",
-                }}
-              >
-                Welcome to
-              </Typography>
-              <Typography
-                variant="h3"
-                gutterBottom
-                sx={{
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  paddingLeft: "1rem",
-                }}
-              >
-                Physics.
-              </Typography>
-            </FadeOnScroll>
-            <FadeOnScroll duration={2} delay={0.5}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                sx={{ textAlign: "center", margin: "1rem" }}
-              >
-                Welcome to the Queens College Physics Club, the hub for future
-                physicists and enthusiasts alike.
-              </Typography>
-            </FadeOnScroll>
-            <FadeOnScroll duration={2} delay={0.7}>
-              <Typography
-                variant="h6"
-                sx={{ textAlign: "center", margin: "1rem" }}
-              >
-                Through interactive events, collaborative projects, and engaging
-                discussions, we aim to deepen our understanding of the
-                universe&apos;s mysteries.
-              </Typography>
-            </FadeOnScroll>
-            <FadeOnScroll duration={2} delay={0.9}>
-              <Typography
-                variant="h6"
-                sx={{ textAlign: "center", margin: "1rem" }}
-              >
-                Join us on this exciting journey of exploration and innovation
-                at Queens College!
-              </Typography>
-            </FadeOnScroll>
-          </Hidden>
-        </Grid>
         <Grid item xs={12} md={4}>
           <FadeOnScroll>
             <Image
@@ -97,6 +41,99 @@ export default function Home() {
             />
           </FadeOnScroll>
         </Grid>
+        <Grid item xs={5} md={7}>
+          <Hidden mdDown>
+            <FadeOnScroll>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                  fontWeight: "normal",
+                  whiteSpace: "nowrap",
+                  paddingLeft: "1rem",
+                  textAlign: "right",
+                }}
+              >
+                Warm greetings from the
+              </Typography>
+              <Typography
+                variant="h2"
+                gutterBottom
+                sx={{
+                  textAlign: "right",
+                  fontWeight: "bold",
+                  paddingLeft: "1rem",
+                  overflow: "none",
+                }}
+              >
+                PHYSICS CLUB @ QC
+              </Typography>
+            </FadeOnScroll>
+            <FadeOnScroll duration={2} delay={0.5}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{ textAlign: "right", margin: "1rem" }}
+              >
+                Welcome to the Queens College Physics Club, the hub for future
+                physicists and enthusiasts alike.
+              </Typography>
+            </FadeOnScroll>
+          </Hidden>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={2}
+        direction="column"
+        sx={{
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: {
+            md: "1rem",
+            sm: "0rem",
+          },
+          marginBottom: imageMargin,
+        }}
+      >
+        <FadeOnScroll>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{ textAlign: "right", margin: "1rem" }}
+            >
+              Interested? Fill out this interest form for us to get to know whos
+              interested:
+            </Typography>
+          </Grid>
+        </FadeOnScroll>
+
+        <FadeOnScroll>
+          <Grid item>
+            <a href="/interest">
+              <Button
+                variant="contained"
+                sx={{
+                  textAlign: "right",
+                  margin: "1rem",
+                  fontWeight: "bold",
+                  color: (theme) => theme.palette.text.primary,
+                  backgroundColor: (theme) =>
+                    `${theme.palette.background.paper} !important`,
+                  borderRadius: "2rem",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: "bold", padding: "0.5rem" }}
+                >
+                  Interest Form {doubleGT}
+                </Typography>
+              </Button>
+            </a>
+          </Grid>
+        </FadeOnScroll>
       </Grid>
       <Hidden mdDown>
         <ParallaxCursorComponent />

@@ -10,7 +10,6 @@ import Link from "next/link";
 //   description: "Meet our team.",
 // };
 
-
 export default function About() {
   const [isPresident, setPresidentVisible] = useInView({
     triggerOnce: true,
@@ -77,13 +76,19 @@ export default function About() {
             className="rounded shadow-lg mb-4 "
             width={200}
             height={200}
+            style={{
+              height: "200px",
+              width: "200px",
+              objectFit: "cover",
+              objectPosition: "center center",
+            }}
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-md font-semibold">
-              Taylor
+              Swan Htet
             </Typography>
             <Typography variant="body1" className="text-sm">
-              President
+              Temporary Stand in President
             </Typography>
           </Container>
         </Container>
@@ -102,10 +107,16 @@ export default function About() {
             className="rounded shadow-lg mb-4 "
             width={200}
             height={200}
+            style={{
+              height: "200px",
+              width: "200px",
+              objectFit: "cover",
+              objectPosition: "center center",
+            }}
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-mb font-semibold">
-              Swan Htet
+              NAN
             </Typography>
             <Typography variant="body1" className="text-sm">
               Vice President
@@ -125,6 +136,12 @@ export default function About() {
               className="rounded shadow-lg mb-4 "
               width={200}
               height={200}
+              style={{
+                height: "200px",
+                width: "200px",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
             />
             <Container className="text-center mb-8">
               <Typography variant="body1" className="text-mb font-semibold">
@@ -149,6 +166,12 @@ export default function About() {
               className="rounded shadow-lg mb-4 "
               width={200}
               height={200}
+              style={{
+                height: "200px",
+                width: "200px",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
             />
             <Container className="text-center mb-8">
               <Typography variant="body1" className="text-mb font-semibold">
@@ -188,6 +211,12 @@ export default function About() {
                   width={200}
                   height={200}
                   className="rounded shadow-lg mb-4"
+                  style={{
+                    height: "200px",
+                    width: "200px",
+                    objectFit: "cover",
+                    objectPosition: "center center",
+                  }}
                 />
               </Link>
               <Typography
@@ -219,6 +248,12 @@ export default function About() {
                   width={200}
                   height={200}
                   className="rounded shadow-lg mb-4"
+                  style={{
+                    height: "200px",
+                    width: "200px",
+                    objectFit: "cover",
+                    objectPosition: "center center",
+                  }}
                 />
               </Link>
               <Typography
@@ -246,11 +281,17 @@ export default function About() {
                   passHref
                 >
                   <Image
-                    src="/images/jeremy.png"
+                    src="/images/jeremy.jpeg"
                     alt="Jeremy Gangaram"
                     width={200}
                     height={200}
                     className="rounded shadow-lg mb-4"
+                    style={{
+                      height: "200px",
+                      width: "200px",
+                      objectFit: "cover",
+                      objectPosition: "center center",
+                    }}
                   />
                 </Link>
                 <Typography
@@ -284,6 +325,12 @@ export default function About() {
                     width={200}
                     height={200}
                     className="rounded shadow-lg mb-4"
+                    style={{
+                      height: "200px",
+                      width: "200px",
+                      objectFit: "cover",
+                      objectPosition: "center center",
+                    }}
                   />
                 </Link>
                 <Typography

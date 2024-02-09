@@ -18,6 +18,7 @@ import {
   Typography,
   Button,
 } from "@/node_modules/@mui/material/index";
+import Image from "next/image";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Events", "About"];
@@ -56,7 +57,14 @@ export default function NavBar() {
   return (
     <Box sx={{ display: "flex", marginBottom: "96px" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar
+        component="nav"
+        sx={{
+          backdropFilter: "blur(10px)", // Apply a blur effect
+          backgroundColor: "rgba(255, 255, 255, 0)", // White background with 70% opacity
+          // Other styles...
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -75,7 +83,14 @@ export default function NavBar() {
               display: { xs: "none", sm: "block", fontWeight: "bold" },
             }}
           >
-            <Link href={"./"}>QC SPS</Link>
+            <Link href={"./"}>
+              <Image
+                src="/images/official_logo.png"
+                alt="qcpc logo"
+                height={50}
+                width={50}
+              />
+            </Link>
           </Typography>
           <Typography
             variant="h6"
