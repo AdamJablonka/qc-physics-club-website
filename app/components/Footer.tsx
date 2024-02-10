@@ -52,7 +52,7 @@ export default function Footer() {
             </ul>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <Typography variant="h6">Etc information</Typography>
+            <Typography variant="h6">Open to all</Typography>
             <Typography variant="body2">
               Open to all students, not only physics! Feel free to drop by
               whenever. Room: Science building B330

@@ -117,10 +117,12 @@ const FormPage = () => {
           </Grid>
         </Grid>
       </form>
-      <Typography variant="h3" sx={{ mt: 2, mb: 2 }}>
+      <Typography variant="h5" sx={{ mt: 5, mb: 2 }}>
         Information
       </Typography>
-      <Typography sx={{ mt: 2, mb: 5 }}>{information}</Typography>
+      <Typography variant="body1" sx={{ mt: 2, mb: 5 }}>
+        {information}
+      </Typography>
     </Container>
   );
 };

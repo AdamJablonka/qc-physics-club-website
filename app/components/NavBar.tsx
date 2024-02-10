@@ -61,7 +61,7 @@ export default function NavBar() {
         component="nav"
         sx={{
           backdropFilter: "blur(10px)", // Apply a blur effect
-          backgroundColor: "rgba(255, 255, 255, 0)", // White background with 70% opacity
+          backgroundColor: "rgba(255, 255, 255, 0)",
           // Other styles...
         }}
       >
@@ -109,26 +109,15 @@ export default function NavBar() {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item, index) => (
               <Link key={item} href={["/", "/events", "/about"][index]}>
-                {item === "About" ? (
-                  <IconButton>
-                    <InfoIcon
-                      sx={{
-                        color: "#fff",
-                        fontSize: "1.75rem",
-                      }}
-                    />
-                  </IconButton>
-                ) : (
-                  <Button
-                    sx={{
-                      color: "#fff",
-                      fontSize: "1.25rem",
-                      textTransform: "none",
-                    }}
-                  >
-                    {item}
-                  </Button>
-                )}
+                <Button
+                  sx={{
+                    color: "#fff",
+                    fontSize: "1.25rem",
+                    textTransform: "none",
+                  }}
+                >
+                  {item}
+                </Button>
               </Link>
             ))}
           </Box>
