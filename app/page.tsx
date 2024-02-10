@@ -1,5 +1,13 @@
 "use client";
-import { Box, Grid, Typography, Hidden, Divider, Button } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  Hidden,
+  Divider,
+  Button,
+  Container,
+} from "@mui/material";
 import { ImageCarousel } from "./components/ImageCarousel";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,7 +36,7 @@ export default function Home() {
             md: "1rem",
             sm: "0rem",
           },
-          marginBottom: imageMargin,
+          marginBottom: isMobile ? 0 : imageMargin,
         }}
       >
         <Grid item xs={12} md={4}>
@@ -76,11 +84,30 @@ export default function Home() {
                 sx={{ textAlign: "right", margin: "1rem" }}
               >
                 Welcome to the Queens College Physics Club, the hub for future
-                physicists and enthusiasts alike.
+                physicists and enthusiasts alike. Join us on this exciting
+                journey of exploration and innovation at Queens College!
               </Typography>
             </FadeOnScroll>
           </Hidden>
         </Grid>
+      </Grid>
+      <Grid
+        direction="column"
+        container
+        sx={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <FadeOnScroll duration={2} delay={0.5}>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ textAlign: "center", fontWeight: "bold" }}
+          >
+            Queens College Physics Club
+          </Typography>
+        </FadeOnScroll>
       </Grid>
       <Grid
         container
@@ -96,18 +123,40 @@ export default function Home() {
           marginBottom: imageMargin,
         }}
       >
-        <FadeOnScroll>
-          <Grid item>
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{ textAlign: "right", margin: "1rem" }}
-            >
-              Interested? Fill out this interest form for us to get to know whos
-              interested:
-            </Typography>
-          </Grid>
-        </FadeOnScroll>
+        <Hidden mdDown>
+          <FadeOnScroll>
+            <Grid item>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{ textAlign: "right", margin: "1rem" }}
+              >
+                Interested? Fill out this interest form for us to get to know
+                you!
+              </Typography>
+            </Grid>
+          </FadeOnScroll>
+        </Hidden>
+        <Hidden mdUp>
+          <FadeOnScroll>
+            <Grid item sx={{ textAlign: "center", marginTop: "10rem" }}>
+              <Typography
+                variant="h3"
+                gutterBottom
+                sx={{ textAlign: "center" }}
+              >
+                Interested?
+              </Typography>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{ textAlign: "center" }}
+              >
+                Fill out this form:
+              </Typography>
+            </Grid>
+          </FadeOnScroll>
+        </Hidden>
 
         <FadeOnScroll>
           <Grid item>
@@ -242,7 +291,7 @@ export default function Home() {
                 </Typography>
               </FadeOnScroll>
             </Grid>
-            <Grid item xs={1}>
+            <Grid item xs={2}>
               <Divider orientation="vertical" flexItem>
                 OR
               </Divider>

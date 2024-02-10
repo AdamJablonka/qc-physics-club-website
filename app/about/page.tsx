@@ -226,7 +226,7 @@ export default function About() {
                 Carlos Vega
               </Typography>
               <Typography variant="body1" className="text-sm">
-                Lead Developer
+                Developer
               </Typography>
             </Container>
           </Grid>
@@ -263,7 +263,7 @@ export default function About() {
                 Adam Jablonka
               </Typography>
               <Typography variant="body1" className="text-sm">
-                Lead Developer
+                Developer
               </Typography>
             </Container>
           </Grid>
@@ -301,7 +301,7 @@ export default function About() {
                   Jeremy Gangaram
                 </Typography>
                 <Typography variant="body1" className="text-sm">
-                  Lead Developer
+                  Developer
                 </Typography>
               </Container>
             </Container>
