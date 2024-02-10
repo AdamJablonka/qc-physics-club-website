@@ -11,7 +11,7 @@ import {
 import { ImageCarousel } from "./components/ImageCarousel";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { eventFillerPhotos } from "./events/utils/imageData";
+import { eventFillerPhotos, frontPageCarousel } from "./events/utils/imageData";
 import { FadeOnScroll } from "./components/FadeOnScroll";
 import { ParallaxCursorComponent } from "./components/ParallaxCursorComponent";
 import { theme } from "./utils/theme";
@@ -186,9 +186,6 @@ export default function Home() {
           </Grid>
         </FadeOnScroll>
       </Grid>
-      <Hidden mdDown>
-        <ParallaxCursorComponent />
-      </Hidden>
       <FadeOnScroll>
         <Grid
           container
@@ -206,6 +203,9 @@ export default function Home() {
           </Box>
         </Grid>
       </FadeOnScroll>
+      <Hidden mdDown>
+        <ParallaxCursorComponent />
+      </Hidden>
       <Hidden mdUp>
         <Box
           sx={{

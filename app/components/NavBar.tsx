@@ -104,7 +104,14 @@ export default function NavBar() {
               },
             }}
           >
-            <Link href={"./"}>QC SPS</Link>
+            <Link href={"./"}>
+              <Image
+                src="/images/official_logo.png"
+                alt="qcpc logo"
+                width={35}
+                height={35}
+              />
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item, index) => (

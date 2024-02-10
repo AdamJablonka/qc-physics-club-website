@@ -1,4 +1,8 @@
-import { eventFillerPhotos, firstAstronomyNightPhotos } from "./imageData";
+import {
+  eventFillerPhotos,
+  firstAstronomyNightPhotos,
+  labTour2023,
+} from "./imageData";
 import { PhotosArray } from "./imageData";
 export interface ClubEvent {
   title: string;
@@ -40,7 +44,7 @@ export const eventsData: ClubEvent[] = [
     date: new Date("October 16, 2023"),
     description:
       "Join us for an enlightening lab tour led by Professor Almeida! Dive deep into the world of physics, witness cutting-edge experiments in action, and engage in insightful discussions. Perfect for enthusiasts and curious minds. Don't miss this exclusive opportunity to see science in motion!",
-    eventPhotos: eventFillerPhotos,
+    eventPhotos: labTour2023,
   },
   {
     title: "Astronomy Observing Night",

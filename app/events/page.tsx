@@ -13,7 +13,12 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import React from "react";
 import { ExpandableCard } from "../components/ExpandableCard";
-import { eventsData, eventFillerPhotos, ClubEvent } from "./utils";
+import {
+  eventsData,
+  eventFillerPhotos,
+  ClubEvent,
+  frontPageCarousel,
+} from "./utils";
 import { FadeOnScroll } from "../components/FadeOnScroll";
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -57,7 +62,12 @@ export default function Events() {
         marginTop="2rem"
         marginBottom="2rem"
       >
-        <Typography variant="h2" align="center" gutterBottom>
+        <Typography
+          variant="h2"
+          align="center"
+          sx={{ fontWeight: "bold" }}
+          gutterBottom
+        >
           SPS Events
         </Typography>
         <Typography variant="h6" align="center">
@@ -65,7 +75,14 @@ export default function Events() {
         </Typography>
       </Box>
       <Box margin={6}>
-        <ImageCarousel images={eventFillerPhotos} width={"90em"} />
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          marginBottom="2rem"
+        >
+          <ImageCarousel images={frontPageCarousel} width={"90vw"} />
+        </Box>
         <Typography variant="h4" gutterBottom>
           Upcoming Events
         </Typography>

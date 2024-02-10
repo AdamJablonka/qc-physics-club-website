@@ -73,6 +73,103 @@ export const eventFillerPhotos: PhotosArray = [
   },
 ];
 
+export const frontPageCarousel: PhotosArray = [
+  {
+    src: "/images/randomEvents/lab_3.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/lab_2.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/lab_1.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/movie_night_1.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/movie_night_2.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/movie_night_3.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/event_filler_3.png",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/event_filler_1.png",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/event_filler_2.JPG",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/IMG_3675.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+];
+
+export const labTour2023: PhotosArray = [
+  {
+    src: "/images/randomEvents/lab_3.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/lab_2.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/randomEvents/lab_1.jpg",
+    alt: "Club event photo",
+    legend: "Club event photo",
+    width: 1280,
+    height: 720,
+  },
+];
+
 export const firstAstronomyNightPhotos: PhotosArray = [
   {
     src: "/images/astronomy_night_1_1.JPG",
