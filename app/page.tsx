@@ -11,7 +11,7 @@ import {
 import { ImageCarousel } from "./components/ImageCarousel";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { eventFillerPhotos } from "./events/utils/imageData";
+import { eventFillerPhotos, frontPageCarousel } from "./events/utils/imageData";
 import { FadeOnScroll } from "./components/FadeOnScroll";
 import { ParallaxCursorComponent } from "./components/ParallaxCursorComponent";
 import { theme } from "./utils/theme";
@@ -99,15 +99,17 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <FadeOnScroll duration={2} delay={0.5}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Queens College Physics Club
-          </Typography>
-        </FadeOnScroll>
+        <Hidden mdUp>
+          <FadeOnScroll duration={2} delay={0.5}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{ textAlign: "center", fontWeight: "bold" }}
+            >
+              Queens College Physics Club
+            </Typography>
+          </FadeOnScroll>
+        </Hidden>
       </Grid>
       <Grid
         container
@@ -184,9 +186,6 @@ export default function Home() {
           </Grid>
         </FadeOnScroll>
       </Grid>
-      <Hidden mdDown>
-        <ParallaxCursorComponent />
-      </Hidden>
       <FadeOnScroll>
         <Grid
           container
@@ -204,6 +203,9 @@ export default function Home() {
           </Box>
         </Grid>
       </FadeOnScroll>
+      <Hidden mdDown>
+        <ParallaxCursorComponent />
+      </Hidden>
       <Hidden mdUp>
         <Box
           sx={{
