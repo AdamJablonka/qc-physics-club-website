@@ -99,15 +99,17 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <FadeOnScroll duration={2} delay={0.5}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Queens College Physics Club
-          </Typography>
-        </FadeOnScroll>
+        <Hidden mdUp>
+          <FadeOnScroll duration={2} delay={0.5}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{ textAlign: "center", fontWeight: "bold" }}
+            >
+              Queens College Physics Club
+            </Typography>
+          </FadeOnScroll>
+        </Hidden>
       </Grid>
       <Grid
         container
