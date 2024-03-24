@@ -116,7 +116,7 @@ export default function About() {
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-mb font-semibold">
-              Meave (something)
+              Meave Cheevers
             </Typography>
             <Typography variant="body1" className="text-sm">
               Vice President
