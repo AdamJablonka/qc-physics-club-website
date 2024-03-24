@@ -88,7 +88,7 @@ export default function About() {
               Swan Htet
             </Typography>
             <Typography variant="body1" className="text-sm">
-              Temporary Stand in President
+              President
             </Typography>
           </Container>
         </Container>
@@ -116,7 +116,7 @@ export default function About() {
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-mb font-semibold">
-              NAN
+              Meave (something)
             </Typography>
             <Typography variant="body1" className="text-sm">
               Vice President
