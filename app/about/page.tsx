@@ -53,7 +53,7 @@ export default function About() {
 
   const BoardMemberNames= {
       president: "Swan Htet",
-      vicePresident: "Meave Cheevers",
+      vicePresident: "Meabh Jack",
       secretary: "Anand Persaud",
       treasurer: "Ryan Persad",
    }
