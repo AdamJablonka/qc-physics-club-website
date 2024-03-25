@@ -185,7 +185,7 @@ export default function About() {
                 {BoardMemberNames.treasurer}
               </Typography>
               <Typography variant="body1" className="text-sm">
-                Treasure
+                Treasurer
               </Typography>
             </Container>
           </Container>
