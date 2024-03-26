@@ -51,6 +51,13 @@ export default function About() {
     threshold: 0.1,
   });
 
+  const BoardMemberNames= {
+      president: "Swan Htet",
+      vicePresident: "Meabh Jack",
+      secretary: "Anand Persaud",
+      treasurer: "Ryan Persad",
+   }
+
   return (
     <Container className="flex flex-col items-center pt-10 min-h-screen w-full px-4 mb-20">
       <Typography variant="h1" className="text-4xl font-bold mb-6">
@@ -85,10 +92,10 @@ export default function About() {
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-md font-semibold">
-              Swan Htet
+              {BoardMemberNames.president}
             </Typography>
             <Typography variant="body1" className="text-sm">
-              Temporary Stand in President
+              President
             </Typography>
           </Container>
         </Container>
@@ -116,7 +123,7 @@ export default function About() {
           />
           <Container className="text-center mb-8">
             <Typography variant="body1" className="text-mb font-semibold">
-              NAN
+              {BoardMemberNames.vicePresident}
             </Typography>
             <Typography variant="body1" className="text-sm">
               Vice President
@@ -145,7 +152,7 @@ export default function About() {
             />
             <Container className="text-center mb-8">
               <Typography variant="body1" className="text-mb font-semibold">
-                Anan Persaud
+                {BoardMemberNames.secretary}
               </Typography>
               <Typography variant="body1" className="text-sm">
                 Secretary
@@ -175,10 +182,10 @@ export default function About() {
             />
             <Container className="text-center mb-8">
               <Typography variant="body1" className="text-mb font-semibold">
-                Ryan
+                {BoardMemberNames.treasurer}
               </Typography>
               <Typography variant="body1" className="text-sm">
-                Treasure
+                Treasurer
               </Typography>
             </Container>
           </Container>
